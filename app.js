@@ -1,20 +1,7 @@
-const passport = require('passport');
-const FacebookStrategy = require('passport-facebook').Strategy;
-const session = require('express-session');
-const app = express();
+// app.js
+const app = require('./src/infrastructure/server');
+const PORT = process.env.PORT || 3000;
 
-const { ObjectId } = require("mongodb");
-const ConnectToDatabase = require("../../infrastructure/database/mongodb");
-
-class User{
- 
-    async aggregate (data) {
-        let obj = ConnectToDatabase.instanceConnect;
-        const collection = obj.db.collection('cliente');
-        const res = await collection.aggregate([...data]).toArray();
-        return res;
-    }
-
-}
-
-module.exports = User;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
