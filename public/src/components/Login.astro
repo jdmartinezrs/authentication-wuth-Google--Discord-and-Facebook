@@ -1,0 +1,16 @@
+---
+import Titulos from "../components/Titulos.astro"
+import Botones from "../components/Botones.astro"
+import OR from "../components/OR.astro"
+import Form from "../components/Form.astro"
+import BTLG from "../components/BTLG.astro"
+
+{Astro.props}
+---
+<div class=" bg-white bg-opacity-80 max-md:w-[360px] max-md:h-[640px] w-[700px] h-[800px] rounded-2xl flex flex-col py-6 px-3 items-center gap-y-4">
+    <Titulos></Titulos>
+    <Botones></Botones>
+    <OR></OR>
+    <Form></Form>
+    <BTLG></BTLG>
+</div>
