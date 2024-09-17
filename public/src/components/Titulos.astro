@@ -1,8 +1,18 @@
 ---
+interface Props {
+    title: string,
+    small: string, 
+    underline: string
+    redirect: string
+}
 
+const {title} = Astro.props
+const {small} = Astro.props
+const {underline} = Astro.props
+const {redirect} = Astro.props
 ---
 <div id="titulos" class="w-full flex flex-col items-center gap-y-2">
-    <img src="" class="max-md:w-[30px] max-md:h-[30px] rounded-full w-[44px] h-[44px]">
-    <h1 class="capitalize max-md:text-xl text-black text-2xl font-semibold">log in</h1>
-    <small class="text-sm text-black text-opacity-60">Don´t have an account? <a class="underline">Sing up</a></small>
+    <img src="./docusaurus.svg" class="max-md:w-[30px] max-md:h-[30px] rounded-full w-[46px] h-[46px]">
+    <h1 class="capitalize max-md:text-xl text-black text-2xl font-semibold">{title}</h1>
+    <small class="text-sm text-black text-opacity-60">{small} <a href={redirect} class="underline">{underline}</a></small>
 </div>
